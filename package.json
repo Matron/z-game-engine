@@ -1,11 +1,11 @@
 {
-  "name": "game-engine",
+  "name": "z-game-engine",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "ts-node index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./node_modules/ts-node/dist/bin.js index.ts"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,7 @@
     "express": "^4.16.3",
     "mongoose": "^5.2.1",
     "morgan": "^1.9.0",
-    "socket.io": "^2.1.1"
+    "socket.io": "^2.1.1",
+    "z-types": "git+ssh://git@github.com:Matron/z-types.git"
   }
 }
