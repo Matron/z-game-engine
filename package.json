@@ -24,6 +24,6 @@
     "socket.io": "^2.1.1",
     "ts-node": "^7.0.1",
     "typescript": "^3.0.1",
-    "z-types": "git+https://git@github.com:Matron/z-types.git"
+    "z-types": "git+ssh://git@github.com:Matron/z-types.git"
   }
 }
