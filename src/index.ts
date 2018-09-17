@@ -1,7 +1,7 @@
 var express = require("express");
 var http = require("http");
 var app = express();
-var server = http.createServer(app).listen(process.env.SOCKET_PORT || 3001);
+var server = http.createServer(app).listen(80);
 var io = require("socket.io")(server);
 
 export class GameEngine {
