@@ -4,20 +4,10 @@ var cors = require("cors");
 
 var app = express();
 // app.use(cors());
-var server = http.createServer(function(req: any, res: any){
-	// Set CORS headers
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.setHeader('Access-Control-Request-Method', '*');
-	res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
-	res.setHeader('Access-Control-Allow-Headers', '*');
-	if ( req.method === 'OPTIONS' ) {
-		res.writeHead(200);
-		res.end();
-		return;
-	}
-}).listen(process.env.SOCKET_PORT || 3001);
+var server = http.createServer(app).listen(process.env.SOCKET_PORT || 3001);
 
 var io = require("socket.io")(server);
+io.origins('*:*');
 
 export class GameEngine {
     constructor() {
