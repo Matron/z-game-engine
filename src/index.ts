@@ -1,17 +1,20 @@
-var express = require("express");
-var http = require("http");
-var cors = require("cors");
+const express = require("express");
+const http = require("http");
+const cors = require("cors");
 
-var app = express();
+const app = express();
 app.use(cors());
-var server = http.createServer(app).listen(process.env.PORT || 3001);
 
-var io = require("socket.io")(server);
+let port = process.env.PORT || 3001;
+
+const server = http.createServer(app).listen(port);
+
+const io = require("socket.io")(server);
 
 export class GameEngine {
     constructor() {
         io.on("connection", function(socket: any) {
-            var interval: any;
+            let interval: NodeJS.Timer;
         
             socket.on("startGame", function() {
                 interval = setInterval(function() {
@@ -27,11 +30,8 @@ export class GameEngine {
         
         });
         
-        console.log("Starting Socket App - http://localhost:3001");
-       
+        console.log(`Socket started on port: ${port}`);
     }
-
-    
 }
 
 function getRandomInt(min: number, max: number) {
