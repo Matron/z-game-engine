@@ -3,7 +3,7 @@ var http = require("http");
 var cors = require("cors");
 
 var app = express();
-// app.use(cors());
+app.use(cors());
 var server = http.createServer(app).listen(process.env.SOCKET_PORT || 3001);
 
 var io = require("socket.io")(server);
